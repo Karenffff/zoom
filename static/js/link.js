@@ -15,7 +15,7 @@ $("#book_btn").on("click", ()=>{
    $(".link_copy").show()
 
    let hostname_ = window.location.hostname;
-   let url = hostname_ + "/zoommeeting?meeting=video&id="+btoa($("#company_name").val())+"&access="+btoa($("#company_email").val());
+   let url = hostname_ + "/zoommeeting/zoommeeting?meeting=video&id="+btoa($("#company_name").val())+"&access="+btoa($("#company_email").val());
 
    $("#generate_link").html(`<a href="${url}">${url}</a>`)
 
