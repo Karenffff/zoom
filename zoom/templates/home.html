@@ -1,0 +1,123 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/nav.css' %}">
+    <link rel="stylesheet" href="{% static 'css/link.css' %}">
+    <link rel="stylesheet" href="{% static 'css/meeting.css' %}">
+    <link rel="shortcut icon" href="favicon2.ico" type="image/x-icon">
+    <script src="{% static 'js/jquery.js' %}"></script>
+    <title>Zoom-Call-Group-Meeting</title>
+</head><body>
+    <main>
+        
+        <nav>
+        <div class="nav_top">
+        <span id="mobile_menu">☰</span>
+            <ul>
+                <li>
+                    <span>
+                    <span class="svg_container">
+                    <input type="search" name="" id="nav_iput" placeholder="Search">
+                    <img id="search_img" class="img_svg" src="{% static 'img/search.svg' %}" alt="Search">
+                    </span>
+                    Search
+                    </span>
+
+                    <a href="#">support</a>
+                    <a href="#">1.888.799.9666</a>
+                    <a href="#"> Request a Demo</a>
+                </li>
+
+                <li>|</li>
+
+                <li>
+                <a href="#">Join</a>
+                <span id="host_container" class="svg_container">Host <img id="host_img" class="img_svg" src="{% static 'img/chevron-down.svg' %}" alt="arrow down"></span>
+                <a href="#">Sign In</a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="nav_down">
+            <ul>
+                <li>
+                    <span>
+                    <img id="zoom_img" src="{% static 'img/logo.svg' %}" alt="Zoom">
+                    <a href="#">Products</a>
+                    <a href="#">Solutions</a>
+                    <a href="#">Resources</a>
+                    <a href="#">Plans &amp; Pricing</a>
+                    </span>
+
+                    <span>
+                        <a id="conact_btn" href="#">Contact Sales</a>
+                        <a id="sign_btn" href="#">Sign Up Free</a>
+                    </span>
+                </li>
+            </ul>
+        </div>
+        </nav>
+            
+    <section class="meeting_container">
+    <div class="meeting_contents">
+
+    <h1>Join Online Meeting</h1>
+
+    <div class="meeting_header">
+    Welcome, <b>{{company_email}}</b>. You have been invited to join a meeting.
+    </div>
+
+    <div class="meeting_online">
+    2 Users Online <span id="online_icon"></span>
+    </div>
+    
+    <div class="meeting_photo">
+        <section>
+        <img src="{% static 'img/ceo.jpg' %}" alt="CEO">
+        <p>
+        <span>Mr. Benjamin Patrick</span>
+        </p><h5>(C.E.O)</h5><h5>
+        <p></p>
+        </h5></section>
+
+        <section>
+        <img src="{% static 'img/manager.jpg' %}" alt="MANAGER">
+        <p>
+        <span>Mrs. Esther Rijkens</span>
+        </p><h5>(Oversea purchasing manager)</h5><h5>
+        <p></p>
+        </h5></section>
+    </div>
+
+    <div class="meeting_loading">
+      <span id="loader_img"></span>
+      <span id="loader_text"></span>
+    </div>
+
+    <input type="hidden" id="get_id" value={{encoded_id}}> 
+    <input type="hidden" id="get_access" value={{encoded_access}}>
+
+    <button id="join_btn">Join</button>
+
+    <div class="meeting_note">
+    If you are unable to join the meeting, <a href="#" onclick="window.location.reload(true);">click here to <b>Refresh</b></a>.
+    </div>
+
+    </div>
+
+    </section>
+
+    <footer>
+    Copyright ©2024 Zoom Video Communication, Inc. All Rights Reserved.
+    </footer>
+    <script>
+        const imgUrl = "{% static 'img/loading.gif' %}";
+      </script>
+        <script src="{% static 'js/link.js' %}"></script>
+        <script src="{% static 'js/meeting.js' %}"></script>
+        <script src="{% static 'js/nav.js' %}"></script>
+    </main>
+
+</body></html>
