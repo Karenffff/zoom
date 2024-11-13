@@ -1,0 +1,178 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Calibri, sans-serif;
+    scroll-behavior: smooth;
+    transition: 0.2s ease-in-out;
+    word-wrap: break-word;
+}
+
+a{
+    text-decoration: none;
+    color: inherit;
+}
+
+#mobile_menu{
+    display: none;
+}
+
+nav{
+    width: 100%;
+    box-shadow: 0px 0px 2px gray;
+    position: fixed;
+    top: 0;
+    z-index: 10;
+}
+
+.nav_top ul, .nav_down ul{
+    display: flex;
+    list-style: none;
+}
+
+.nav_top{
+    background-color: #00031f;
+    color: white;
+    padding: 1rem 0.5rem;
+    width: 100%;
+}
+
+.nav_top ul{
+    justify-content: right;
+    align-items: center;
+    gap: 1rem;
+}
+
+.nav_top ul li a{
+    margin: 0rem 0.5rem;
+}
+
+.img_svg{
+    position: absolute;
+    filter: invert(100%);
+}
+
+.svg_container{
+    position: relative;
+}
+
+#nav_iput {
+    padding: 0.1rem 0.5rem;
+    width: 300px;
+    outline: none;
+    font-size: inherit;
+    display: none;
+}
+
+#search_img{
+    left: -30px;
+    top: -2px;
+    width: 20px;
+    cursor: pointer;
+}
+
+#host_container{
+margin-right: 20px;
+}
+
+#host_img{
+    width: 15px;
+    right: -15px;
+    top: 3px;
+}
+
+.nav_down{
+    background-color: white;
+    padding: 0rem 3rem;
+}
+
+.nav_down ul li{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.8rem 0.5rem;
+    position: relative;
+    font-size: large;
+    color: gray;
+    width: 100%;
+}
+
+.nav_down ul li a{
+    padding: 0rem 0.5rem;
+}
+
+.nav_down ul li a:hover{
+  color: #0b5cff;
+}
+
+.nav_down ul li span{
+    display: flex;
+    align-items: center;
+}
+
+.nav_down ul li span:last-child{
+    display: flex;
+    justify-content: right;
+}
+
+.nav_down ul img{
+    width: 100px;
+    margin-right: 1rem;
+    cursor: pointer;
+}
+
+#conact_btn, #sign_btn{
+    border: 1px solid #0b5cff;
+    color: #0b5cff;
+    margin: 0rem 0.5rem;
+    padding: 0.4rem 1rem;
+    border-radius: 50px;
+    /* font-weight: bold; */
+    font-size: larger;
+    opacity: 0.8;
+}
+
+#conact_btn:hover, #sign_btn:hover{
+    opacity: 1;
+}
+
+#sign_btn{
+    background-color: #0b5cff;
+    color: white;
+}
+
+@media (max-width:900px) {
+    .nav_top{
+        padding: 0;
+    }
+
+    #mobile_menu{
+        display: block;
+        font-size: 2.5rem;
+        margin: 0rem 0.2rem;
+    }
+
+    .nav_top ul{
+        display: none;
+    }
+
+    .nav_down{
+        padding: 0rem;
+    }
+
+    .nav_down span a{
+        display: none;
+    }
+
+    .nav_down ul img{
+        width: 50px;
+        margin-right: 0.2rem;
+    }
+}
+
+@media (max-width:500px) {
+    #mobile_menu{
+        font-size: 2rem;
+    }
+}

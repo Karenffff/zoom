@@ -1,0 +1,108 @@
+.link_container{
+    margin-top: 9rem;
+}
+
+.link_container h1{
+    text-align: center;
+    font-size: 2.5rem;
+}
+
+.link_inputs{
+    width: 35%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin: 1rem auto;
+}
+
+.link_inputs input, .link_inputs section{
+    width: 100%;
+}
+
+.link_inputs input{
+    padding: 1rem 0.5rem;
+    outline: none;
+    font-size: inherit;
+    margin: 0.3rem 0rem;
+}
+
+.link_inputs button{
+    display: flex;
+    margin: 0.5rem auto;
+    cursor: pointer;
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 0.5rem 1rem;
+    font-size: large;
+}
+
+.link_inputs button:hover, .link_copy button:hover{
+    background-color: #0047AB;
+}
+
+.link_copy{
+    display: none;
+}
+
+.link_copy p, #generate_link{
+    margin: 0rem 1rem;
+}
+
+.link_copy button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    background-color: black;
+    color: white;
+    margin: 1rem;
+    padding: 0.3rem 0.8rem;
+    border-radius: 5px;
+    font-size: larger;
+    border: none;
+}
+
+.link_copy button img{
+    filter: invert(100%)
+}
+
+/*  */
+
+@media (max-width: 1030px) {
+    .link_inputs{
+        width: 50%;
+    }
+}
+
+@media (max-width: 900px) {
+    .link_inputs{
+        width: 60%;
+    }
+
+    .link_container h1{
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .link_container h1{
+        font-size: 1.5rem;
+    }
+
+    .link_inputs{
+        width: 70%;
+    }
+
+
+}
+
+@media (max-width: 500px) {
+    .link_inputs{
+        width: 90%;
+    }
+
+
+}
